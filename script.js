@@ -3,15 +3,40 @@ const tableListButt = document.querySelectorAll('#tables');
 const addPlayerButt = document.getElementById('add-player');
 const removePlayerButt = document.getElementById('remove-player');
 const markWinnerButt = document.getElementById('mark-winner');
-const shuffleSeatsButt = codument.getElementById('shuffle-seats');
+const shuffleSeatsButt = document.getElementById('shuffle-seats');
+const dynamicList = document.getElementById('dynamic-list');
+const nameInput = document.getElementById('name-input');
 
 
 const addPlayer = () => {
-    // names.innerHTML += '<div class="name-cont">Rusty Shackleford</div>';
-    console.log('bdfodsjfdsalkfjdsakjfdklasjf');
+    const newPlayer = nameInput.value;
+
+    if(newPlayer) {
+        const listItem = document.createElement('li');
+        listItem.textContent = newPlayer;
+
+        dynamicList.appendChild(listItem);
+        
+    } else {
+        alert('Please Enter A Name');
+    }
+   
+    itemInput.value = '';
 }
-console.log('bdfodsjfdsalkfjdsakjfdklasjf');
 
 addPlayerButt.addEventListener('click', addPlayer);
 
-addPlayer();
+// nameInput.addEventListener('keydown', (e) => {
+//     e.preventDefault();
+    
+//     if(e.key === 'Enter') {
+//         addPlayer();
+//     }
+//     return;
+// })
+
+
+
+
+
+// names.innerHTML += '<div class="name-cont">Rusty Shackleford</div>';
